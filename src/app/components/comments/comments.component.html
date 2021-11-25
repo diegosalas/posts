@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col">
+    <ul>
+      <li *ngFor="let comment of comments">
+        <h5>{{ comment.name }}</h5>
+        {{ comment.body }}
+        <small>
+          <span class="badge badge-success">
+            {{ comment.email }}
+          </span></small
+        >
+      </li>
+    </ul>
+  </div>
+</div>

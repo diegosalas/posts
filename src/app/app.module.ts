@@ -11,6 +11,8 @@ import { PostsService } from './services/posts.service';
 import { PostsComponent } from './components/posts/posts.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommentsComponent } from './components/comments/comments.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,6 @@ import { CommentsComponent } from './components/comments/comments.component';
     HomeComponent,
     AboutComponent,
     NavbarComponent,
- 
     PostsComponent,
     CommentsComponent,
   ],
@@ -26,6 +27,8 @@ import { CommentsComponent } from './components/comments/comments.component';
     BrowserModule,
     RouterModule.forRoot(ROUTES, { useHash: true }),
     HttpClientModule,
+    BrowserAnimationsModule,
+    IonicModule.forRoot(),
   ],
   providers: [PostsService],
   bootstrap: [AppComponent],

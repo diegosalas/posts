@@ -1,22 +1,15 @@
 
-<form autocomplete="off" action="/action_page.php">
-  <div class="autocomplete">
-    <input id="myInput" type="text" name="myCountry" placeholder="Filter by Author">
-  </div>
-  <input class="btn_search" type="submit">
-</form>
+<ion-searchbar placeholder="Search by Title" autocomplete="true" type="text" debounce="500" (ionChange)="getItems($event)"></ion-searchbar>
+<ion-list >
+    <ion-item-group *ngFor="let post of posts; let index = index" >
+            <ion-item-divider *ngIf="!posts[index-1] || post.userId !== posts[index-1].userId">{{post.userId}}
+          </ion-item-divider>
+            <ion-item routerLink="" (click)="showComments(post.id)">
+              <ion-label> {{ post.title }} </ion-label>
+            </ion-item> 
+        </ion-item-group>
+</ion-list>
 
-<div class="row">
-  <div class="col">
-    <ul>
-      <li *ngFor="let post of posts">
-        <a routerLink="" (click)="showComments(post.id)">
-          {{ post.title }}
-        </a>
-      </li>
-    </ul>
-  </div>
-</div>
 
 
 

@@ -2,12 +2,7 @@
   "name": "miapp2",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "start": "ng serve"
   },
   "private": true,
   "dependencies": {
@@ -24,7 +19,6 @@
     "@ionic/angular": "^5.9.1",
     "@popperjs/core": "^2.4.2",
     "bootstrap": "^4.5.0",
-    "hammerjs": "^2.0.8",
     "jquery": "^3.5.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
@@ -50,9 +44,5 @@
     "tslint": "~6.1.0",
     "typescript": "~3.8.3",
     "@ionic/angular-toolkit": "latest"
-  },
-  "scripts": {
-    "start": "ng serve"
-
   }
 }

@@ -50,9 +50,7 @@ export class PostsComponent implements OnInit {
             return (post.title.toLowerCase().indexOf(val.toLowerCase()) > -1);
         })
     } else {
-        this.postsService.getPosts().subscribe((data: any) => {
-          this.posts = data;
-        });
+      this.postFiltered = this.posts;
     }
   }
 

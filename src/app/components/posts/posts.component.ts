@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class PostsComponent implements OnInit {
   isItemAvailable = false;
+  postFiltered=[]
   posts= [];
   users=[]
   
@@ -31,6 +32,7 @@ export class PostsComponent implements OnInit {
   ngOnInit(): void {
     this.postsService.getPosts().subscribe((data: any) => {
       this.posts = data;
+      this.postFiltered = data;
       });
     this.postsService.getUsers().subscribe((data: any) => {
       this.users = data;
@@ -41,11 +43,10 @@ export class PostsComponent implements OnInit {
 
 
   getItems(ev: any) {
-
     const val = ev.target.value;
+    console.log(val);
     if (val && val.trim() !== '') {
-        this.isItemAvailable = true;
-        this.posts= this.posts.filter((post) => {
+        this.postFiltered= this.posts.filter((post) => {
             return (post.title.toLowerCase().indexOf(val.toLowerCase()) > -1);
         })
     } else {

@@ -4,7 +4,7 @@
       <ion-searchbar placeholder="Search by Title" autocomplete="true" type="text" debounce="500" (ionChange)="getItems($event)"></ion-searchbar>
       <ion-list>   
           <ion-item-group *ngFor="let post of posts; let index = index" >
-                  <ion-item-divider *ngIf="!posts[index-1] || post.userId !== posts[index-1].userId">{{post.userId}}
+                  <ion-item-divider *ngIf="!posts[index-1] || post.userId !== posts[index-1].userId">{{showUserName(post.userId)}}
                 </ion-item-divider>
                   <ion-item routerLink="" (click)="showComments(post.id)">
                     <ion-label> {{ post.title }} </ion-label>

@@ -19,4 +19,8 @@ export class PostsService {
   getComments(id: string) {
     return this.getQuery(`posts/${id}/comments`);
   }
+
+  getUsers(){
+    return this.getQuery('users');
+  }
 }

@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class PostsComponent implements OnInit {
   isItemAvailable = false;
   posts= [];
+  users=[]
   
   constructor(private postsService: PostsService, private router: Router) {
 
@@ -20,9 +21,19 @@ export class PostsComponent implements OnInit {
     this.router.navigate(['posts', id, 'comments']);
   }
 
+  showUserName(id: string) {
+    var result = this.users.find(obj => {
+        return obj.id === id
+    })
+    return result.name
+  }
+
   ngOnInit(): void {
     this.postsService.getPosts().subscribe((data: any) => {
       this.posts = data;
+      });
+    this.postsService.getUsers().subscribe((data: any) => {
+      this.users = data;
       });
   
   }
